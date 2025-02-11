@@ -24,8 +24,9 @@ def sha256(message: bytes) -> bytes:
     internal_state = b'j\t\xe6g\xbbg\xae\x85<n\xf3r\xa5O\xf5:Q\x0eR\x7f\x9b\x05h\x8c\x1f\x83\xd9\xab[\xe0\xcd\x19'
 
     # TODO implement this
-    pass
-
+    padded_message = build_padding(len(message)) + message
+    chunks = split_chunks(padded_message)
+    compress
 
 def sha256_extend(given_hash: bytes, prefix_length: int, message_suffix: bytes) -> bytes:
     """ Perform a length extension attack on SHA-256
